@@ -2,6 +2,14 @@
 
 ![Storyteller Logo](img/Storyteller-logo.jpg)
 
+## 🛠️ Developer Setup Instructions
+
+To set up the project locally, follow step-by-step guide: [Setup Guide.md](SETUP.md)
+
+## 🤝 Contributing
+
+To Contribute to the project read our [CONTRIBUTING.md](CONTRIBUTING.md) guide to get started with coding standards, branching, and pull requests.
+
 
 ## About the Project
 

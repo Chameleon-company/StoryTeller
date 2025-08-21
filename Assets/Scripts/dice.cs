@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -55,10 +56,25 @@ public class dice : MonoBehaviour
         //return topFace + 1;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void RollDice(float throwForce, float rollForce, int i)
     {
-        
+        _diceIndex = i;
+        float randomVariance = Random.Range(-1f, 1f);
+        rb.AddForce(transform.forward * (throwForce + randomVariance), ForceMode.Impulse);
+
+        float randX = Random.Range(0f, 1f);
+        float randY = Random.Range(0f, 1f);
+        float randZ = Random.Range(0f, 1f);
+
+        rb.AddTorque(new Vector3(randX, randY, randZ) * (rollForce + randomVariance), ForceMode.Impulse);
+
+        DelayResult();
+    }
+
+    private async void DelayResult()
+    {
+        await Task.Delay(500);
+        _delayFinished = true;
     }
 
 }

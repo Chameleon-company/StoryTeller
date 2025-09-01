@@ -73,7 +73,7 @@ public class dice : MonoBehaviour
 
     private async void DelayResult()
     {
-        await Task.Delay(500);
+        await Task.Delay(1000);
         _delayFinished = true;
     }
 

@@ -1,0 +1,146 @@
+STORYTELLER BOARD GAME
+
+Game rules and mechanics document
+
+-----------------------------------------
+Introduction
+The Storyteller (also called The Message Stick) is a board game based on Aboriginal and Torres Strait Islander knowledge systems. The purpose of the game is not to win, but to learn, reflect, and share stories during a journey through different cultural areas.
+
+As Trackers (players) journey through Waterholes and Knowledge Areas, they collect cultural artifacts and knowledge, pause for reflection, and eventually reach the central Meeting Place. Here, as in Aboriginal oral traditions, each Tracker shares a story.
+
+When a Tracker has completed their journey and shared their story aloud, they are initiated as the ultimate warrior The Storyteller, carrying forward knowledge he gained.
+
+The game encourages respectful listening, cultural understanding, and storytelling — important values in Indigenous culture.
+
+Core Philosophy
+- Learning over competition
+- Respectful storytelling
+- Cultural understanding
+- Community sharing
+- Connection to Country
+
+-----------------------------------------
+Game Components
+- Game Board: Island Layout with outer ring of waterholes and a central Meeting Place
+- 8 Animal Totem Tokens: Kangaroo, Emu, Goanna, Witchetty Grub, Honey Ant, Fish, Wedge-tailed Eagle, Snake. Expanded options: Eagle, Turtle, Echidna, Possum.
+- 8 unique Artifact Tokens: Didgeridoo, Nulla Nulla, Shield, Clap Sticks, Boomerang, Spear, Coolamon, Axe Head.
+- Meeting Place: Central board location.
+- Message Stick Cards: Symbolize containers of knowledge.
+- 2 Dice ("Rocks").
+- Gone Walkabout Tiles.
+- Story Cards: Creation, Rainbow Serpent, First Sunrise, Koala and the Kangaroo.
+
+-----------------------------------------
+Setup Instructions
+1. Pick player totem: each Tracker selects an animal totem, placed at the yellow start.
+2. Prepare Game Materials: shuffle message stick deck, arrange tiles, place artifact tokens.
+3. Determine player order: highest roll of two dice goes first, play continues clockwise.
+4. Commencing the Dreaming: roll to leave starting Waterhole, then play with one die.
+5. Set game length: decide on number of waterholes to complete (e.g., 4).
+
+-----------------------------------------
+Gameplay Rules
+Basic Turn Structure:
+- Roll one rock (die) to move.
+- White footprints = clockwise.
+- Black footprints = anticlockwise.
+- Follow instructions on landed tile.
+- Pass dice to next player.
+
+Collecting Artifacts:
+- Collect one artifact per full waterhole circuit.
+- Land on artifact symbol + roll correct number to collect it.
+- After 4 artifacts, move toward Meeting Place.
+
+Knowledge Areas:
+- Enter by landing on "Enter" tile.
+- Move through inner circle, exit via "Exit".
+- Continue clockwise around the ring.
+
+Special Tiles:
+- Message Stick Tile: draw a card, read aloud, reflect.
+- Gone Walkabout Tile: skip next turn, reflect.
+- Cultural Symbols: footprints, fire, boomerang, spirit, language.
+
+Story Path Arrows: lead toward Meeting Place.
+
+-----------------------------------------
+Core Game Mechanics
+Knowledge Areas (8 Cultural Domains):
+- Mother Earth
+- Water
+- Fire
+- Air
+- Language
+- Culture
+- Sacred Sites
+- Song-lines
+
+Movement:
+- Players move around outer ring with one die.
+- Collect artifacts each lap.
+
+Meeting Place Entry:
+- After collecting artifacts, move to Waterhole 1.
+- Roll two dice, must roll an 8 to enter.
+- Enter Meeting Place via kangaroo tracks.
+
+Becoming The Storyteller:
+- Select and read a Story Card aloud.
+- Share knowledge; player becomes The Storyteller.
+
+-----------------------------------------
+Character/Unit Rules
+- All players are Trackers.
+- Totems include: Wedgetail Eagle, Kangaroo, Snake, Echidna, Emu, Honey Ant, Possum, Lizard.
+- No player advantage; goal is collective learning.
+
+-----------------------------------------
+Cultural Values in Gameplay
+- Deep Listening (Dadirri)
+- Connection to Country
+- Kinship
+- Storytelling
+- Ceremony
+
+Respectful Play:
+- Listen, reflect, share with empathy.
+- Avoid competition.
+
+-----------------------------------------
+Special Conditions / Variations
+Time Variants:
+- Quick Play: 2-3 waterholes (20-30 min)
+- Standard Play: 4 waterholes (45-60 min)
+- Extended Journey: 6-8 waterholes (90+ min)
+
+Educational Variants:
+- Trivia Mode
+- Research Mode
+- Reflection Mode
+
+Digital Enhancements:
+- Audio narration, multiplayer, AI Trackers, cultural trivia.
+
+-----------------------------------------
+Game Interaction Flow
+- Join Game Room: onboarding for Unity.
+- Draw Story Card: sequence for card play.
+- Knowledge Area Mini-flow: entry, progress, exit.
+- Overall Gameplay Flowchart: macro journey.
+
+-----------------------------------------
+Important Notes
+Cultural Acknowledgement:
+- Respect to Traditional Custodians, Elders past/present/emerging.
+
+Learning Intention:
+- Educational tool for cultural appreciation.
+
+Disclaimer:
+- Players encouraged to connect with Aboriginal communities.
+
+"Through story and song, we continue our culture, learn how to survive, and are reminded of our obligations."
+
+Game Design by Glenn Shea
+Traditional Knowledge Holders: Wadda Wurrung (Watthaurong) and Ngarrindjeri peoples

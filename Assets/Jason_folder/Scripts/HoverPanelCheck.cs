@@ -20,7 +20,7 @@ public class HoverPanelCheck : MonoBehaviour, IPointerEnterHandler, IPointerExit
     {
         if(!isHoverin)
         {
-            HoverPreview preview = FindObjectOfType<HoverPreview>();
+            HoverPreview preview = FindFirstObjectByType<HoverPreview>();
             if (preview != null && !preview.enabled)
             {
                 return;

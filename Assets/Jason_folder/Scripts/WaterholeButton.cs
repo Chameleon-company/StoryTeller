@@ -1,33 +1,39 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WaterholeButton : MonoBehaviour
 {
-  public GameObject window;  
+    public GameObject window;
+    private GameProgress gp;
 
     void Start()
     {
-        
         if (window != null)
         {
-            window.SetActive(false);  
+            window.SetActive(false);
         }
+
+        // Cache GameProgress reference (Unity 6 safe)
+        gp = FindFirstObjectByType<GameProgress>();
     }
 
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                
-                if (hit.collider.gameObject == gameObject)
+                if (hit.collider != null && hit.collider.gameObject == gameObject)
                 {
-                    ToggleWindow(); 
+                    ToggleWindow();
+
+                    // Save progress when waterhole is opened
+                    if (gp != null)
+                    {
+                        gp.unlockedWaterholes += 1;
+                        gp.lastScene = "WaterholeScene";
+                        gp.SaveProgress();
+                    }
                 }
             }
         }
@@ -35,14 +41,10 @@ public class WaterholeButton : MonoBehaviour
 
     void ToggleWindow()
     {
-       
         if (window != null)
         {
             bool isActive = window.activeSelf;
-            window.SetActive(!isActive);  
+            window.SetActive(!isActive);
         }
     }
-
-    
-
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cab6624847746658af6d926200eab2, type: 3}
+  m_Name: 1_WeekOne
+  m_EditorClassIdentifier: 
+  title: 
+  description: "Linking to the Curriculum\n\nHISTORY VCHHK105\nHow physical or geographical
+    features influenced the development of Aboriginal and Torres Strait Islander
+    people\u2019s communities, foundational stories and land management practices\n\nQUESTION
+    1: What is the influence of physical and geographical features of the development
+    of Aboriginal people\u2019s communities, foundational stories and land management
+    practices?\n\nTASK 1: Create a map highlighting your local language group and
+    identify the language groups that border it\n\n2. Research a local site which
+    is of significance to the language group and highlight this on your map and provide
+    a description of this site\n\n3. Describe why a place has significance to the
+    language group through either:\n\nCreation Stories\n\nCultural heritage Practices
+    or\n\nLand management Practices"
+  learnMoreURL: 
+  audioClip: {fileID: 8300000, guid: b2c1ad31efdace24e94146f6635ab3d1, type: 3}
+  infoImage: {fileID: 0}

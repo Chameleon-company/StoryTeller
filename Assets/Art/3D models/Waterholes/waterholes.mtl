@@ -1,0 +1,46 @@
+# Blender 4.5.2 LTS MTL File: 'waterholes.blend'
+# www.blender.org
+
+newmtl Material
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_diff_4k.jpg
+map_Ks C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_spec_4k.png
+map_Ns C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_rough_4k.exr
+map_Bump -bm 1.000000 C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_nor_gl_4k.exr
+
+newmtl Material.004
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/alanm/Downloads/rock_pitted_mossy_4k.blend/textures/rock_pitted_mossy_diff_4k.jpg
+map_Ns C:/Users/alanm/Downloads/rock_pitted_mossy_4k.blend/textures/rock_pitted_mossy_rough_4k.exr
+map_Bump -bm 1.000000 C:/Users/alanm/Downloads/rock_pitted_mossy_4k.blend/textures/rock_pitted_mossy_nor_gl_4k.exr
+
+newmtl Material.008
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_diff_4k.jpg
+map_Ks C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_spec_4k.png
+map_Ns C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_rough_4k.exr
+map_Bump -bm 1.000000 C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_nor_gl_4k.exr
+
+newmtl Material.010
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+map_Kd C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_diff_4k.jpg
+map_Ks C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_spec_4k.png
+map_Ns C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_rough_4k.exr
+map_Bump -bm 1.000000 C:/Users/alanm/Downloads/rocky_terrain_03_4k.blend/textures/rocky_terrain_03_nor_gl_4k.exr

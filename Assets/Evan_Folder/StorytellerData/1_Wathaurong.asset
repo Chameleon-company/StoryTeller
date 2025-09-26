@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cab6624847746658af6d926200eab2, type: 3}
+  m_Name: 1_Wathaurong
+  m_EditorClassIdentifier: 
+  title: Wathaurong (Wadda Wurrung) Community Victoria
+  description: Since 1998, Wathaurong Glass has expressed Aboriginal art in glass
+    and provide training and employment opportunities for community members. Great
+    pride is taken in producing unique artwork, including windows and door glass,
+    kitchen, and bathroom splash backs, artistic platters, bowls, corporate gifts,
+    awards and trophies.
+  learnMoreURL: https://wathaurong.org.au/
+  audioClip: {fileID: 0}
+  infoImage: {fileID: 0}

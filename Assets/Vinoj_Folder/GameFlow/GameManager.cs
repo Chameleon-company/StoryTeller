@@ -1,13 +1,20 @@
 using System;
 using UnityEngine;
+using TMPro;
+
 public class GameFlowManager : MonoBehaviour
 {
+    public TMP_Text diceText;
+     public DiceSystem dice; 
     public static GameFlowManager Instance;
 
     public int playerPosition = 0;
     public int lapsCompleted = 0;
     public bool hasLeftStartingWaterhole = false;
     public bool enteringMeetingPlace = false;
+
+    
+
 
     private void Awake()
     {
@@ -60,5 +67,20 @@ public class GameFlowManager : MonoBehaviour
         {
             Debug.Log("Must roll an 8. Try again next turn.");
         }
+    }
+
+  public void OnRoll()
+    {
+        int result = dice.RollDice();
+        Debug.Log("Player rolled: " + result);
+
+        // Update the UI text
+        if (diceText != null)
+        {
+            diceText.text = "Dice rolled: " + result;
+        }
+
+        // Continue game logic
+        OnDiceRolled(result);
     }
 }

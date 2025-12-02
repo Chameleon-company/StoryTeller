@@ -77,4 +77,8 @@ public class dice : MonoBehaviour
         _delayFinished = true;
     }
 
+    internal static int RollDice()
+    {
+        throw new System.NotImplementedException();
+    }
 }

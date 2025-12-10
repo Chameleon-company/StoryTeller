@@ -1,4 +1,4 @@
-using UnityEngine;
+/* using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
@@ -57,3 +57,4 @@ public class WaterholeProgress : MonoBehaviour, IPointerEnterHandler, IPointerEx
         if (progressText != null) progressText.text = visitedCount + " / " + totalWaterholes + " explored";
     }
 }
+ */

@@ -30,6 +30,7 @@ public class DiceManager : MonoBehaviour
             diceText2.text = dice2.ToString();
 
             GameFlowManager.Instance.OnDiceRolled(dice1 + dice2);
+            
         }
         else
         {
@@ -59,4 +60,13 @@ public class DiceManager : MonoBehaviour
     {
         return usingSingleDie ? dice1 : (dice1 + dice2);
     }
+
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        RollDice();
+    }
+}
+
 }

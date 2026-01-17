@@ -30,6 +30,8 @@ public class GameFlowManager : MonoBehaviour
         }
 
         HandleNormalMovement(rolledValue);
+
+        
     }
 
     private void HandleStartPhase(int rolled)

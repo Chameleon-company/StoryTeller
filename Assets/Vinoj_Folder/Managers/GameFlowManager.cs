@@ -4,7 +4,7 @@ public class GameFlowManager : MonoBehaviour
 {
     public static GameFlowManager Instance;
 
-    public int requiredStartNumber = 6; // example, set in Inspector
+    public int requiredStartNumber = 6; 
     public bool hasLeftStart = false;
     public bool finalStage = false;
 
@@ -79,7 +79,7 @@ public class GameFlowManager : MonoBehaviour
         if (artifactsCollected == 4)
         {
             finalStage = true;
-            DiceManager.Instance.RestoreSecondDie(); // regain second die
+            DiceManager.Instance.RestoreSecondDie(); 
         }
     }
 }

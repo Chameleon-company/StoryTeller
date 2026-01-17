@@ -22,7 +22,7 @@ public class DiceManager : MonoBehaviour
     {
         if (!usingSingleDie)
         {
-            // Starting Phase: Roll BOTH dice
+            //Roll BOTH dice
             dice1 = Random.Range(1, 7);
             dice2 = Random.Range(1, 7);
 
@@ -34,7 +34,7 @@ public class DiceManager : MonoBehaviour
         }
         else
         {
-            // Journey Phase: Roll ONE die
+            //Roll ONE die
             dice1 = Random.Range(1, 7);
 
             diceText1.text = dice1.ToString();

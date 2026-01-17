@@ -16,10 +16,10 @@ public class BoardManager : MonoBehaviour
 
     private void Start()
     {
-        // 1. Find all tiles under BoardManager
+        //Find all tiles under BoardManager
         tiles = GetComponentsInChildren<Tile>()
-                .OrderBy(t => t.tileIndex)      // 2. Sort tiles by index
-                .ToList();                      // 3. Store as movement path
+                .OrderBy(t => t.tileIndex)      //Sort tiles by index
+                .ToList();                      //Store as movement path
 
         Debug.Log("Tiles loaded: " + tiles.Count);
     }
@@ -90,7 +90,7 @@ private IEnumerator MovePlayerCoroutine(int steps)
 
     int targetIndex = startIndex;
 
-    // Move step-by-step (like a real board game)
+    // Move step-by-step 
     for (int i = 0; i < steps; i++)
     {
         targetIndex += direction;

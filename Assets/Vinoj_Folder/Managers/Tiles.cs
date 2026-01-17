@@ -1,4 +1,4 @@
-using UnityEngine;  // MUST be at the very top
+using UnityEngine;  
 
 public enum TileType 
 { 

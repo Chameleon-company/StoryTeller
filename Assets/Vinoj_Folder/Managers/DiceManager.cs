@@ -5,6 +5,8 @@ public class DiceManager : MonoBehaviour
 {
     public static DiceManager Instance;
 
+    public PlayerController playerController;
+
     public TMP_Text diceText1;
     public TMP_Text diceText2;
 
@@ -63,10 +65,15 @@ public class DiceManager : MonoBehaviour
 
     void Update()
 {
+    
     if (Input.GetKeyDown(KeyCode.Space))
     {
         RollDice();
     }
 }
-
+ void RollDiceSpace()
+    {
+        int diceValue = Random.Range(1, 7);
+        playerController.MovePlayer(diceValue);
+    }
 }

@@ -669,6 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869842429eec616429dfcb531ca163b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiles: []
   currentTileIndex: 0
 --- !u!1 &202446124
 GameObject:
@@ -3008,6 +3009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869842429eec616429dfcb531ca163b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tiles: []
   currentTileIndex: 0
 --- !u!4 &1254388736 stripped
 Transform:
@@ -3059,6 +3061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1279840245}
   - component: {fileID: 1279840246}
+  - component: {fileID: 1279840247}
   m_Layer: 0
   m_Name: DiceManager
   m_TagString: Untagged
@@ -3093,9 +3096,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f83fe66d52bab349b8483a67b36be01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 178046860}
   diceText1: {fileID: 969630699}
   diceText2: {fileID: 1881776237}
   usingSingleDie: 0
+--- !u!114 &1279840247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279840244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869842429eec616429dfcb531ca163b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles: []
+  currentTileIndex: 0
 --- !u!1001 &1359443126
 PrefabInstance:
   m_ObjectHideFlags: 0

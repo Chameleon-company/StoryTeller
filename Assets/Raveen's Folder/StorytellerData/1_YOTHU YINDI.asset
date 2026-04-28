@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cab6624847746658af6d926200eab2, type: 3}
+  m_Name: 1_YOTHU YINDI
+  m_EditorClassIdentifier: 
+  title: YOTHU YINDI
+  description: "Yothu Yindi was a pioneering Australian rock band that blended traditional
+    Yol\u014Bu music with rock and reggae. Their 1991 song \"Treaty\" called for
+    a formal treaty between the Australian government and Aboriginal peoples \u2014
+    a powerful message that still resonates today. The Yol\u014Bu people of northeast
+    Arnhem Land have maintained one of the world's oldest living cultures for over
+    60,000 years, keeping language, ceremony, and connection to Country alive through
+    song and story."
+  learnMoreURL: https://www.youtube.com/watch?v=Jf-jHCdafZY&feature=youtu.be
+  audioClip: {fileID: 8300000, guid: b2c1ad31efdace24e94146f6635ab3d1, type: 3}
+  infoImage: {fileID: 0}

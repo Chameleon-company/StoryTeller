@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cab6624847746658af6d926200eab2, type: 3}
+  m_Name: 1_BLACK SWAN (Totem)
+  m_EditorClassIdentifier: 
+  title: BLACK SWAN (Totem)
+  description: The black swan (Cygnus atratus) is a large waterbird, a species of
+    swan which breeds mainly in the southeast and southwest regions of Australia.
+    Within Australia, the black swan is nomadic, with erratic migration patterns
+    dependent upon climatic conditions. It is a large bird with mostly black plumage
+    and a red bill. It is a monogamous breeder, with both partners sharing incubation
+    and cygnet-rearing duties. (Wikipedia)
+  learnMoreURL: https://www.environment.sa.gov.au/news-hub/news/articles/2022/02/river-murray-flows-deliver-breeding-success-for-coorong-black-swans
+  audioClip: {fileID: 0}
+  infoImage: {fileID: 21300000, guid: 54e9aa4341702844ebc2f30221e9b85d, type: 3}

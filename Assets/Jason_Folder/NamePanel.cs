@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class NamePanel : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class NamePanel : MonoBehaviour
         ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable(); 
         hash["playerName"] = playerName; 
         Photon.Pun.PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        
+        if (!PhotonNetwork.InRoom)
+        {
+            RoomOptions options = new RoomOptions { MaxPlayers = 8 };
+            PhotonNetwork.JoinOrCreateRoom("Room1", options, TypedLobby.Default);
+        }
 
         gameObject.SetActive(false); 
         avatarPanel.SetActive(true);

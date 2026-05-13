@@ -41,58 +41,81 @@ public class ChatManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     void SendChatMessage()
     {
-        string text = chatInputField.text;
-
-        if (string.IsNullOrEmpty(text))
+        if (chatInputField == null)
         {
+            Debug.LogError("ChatInputField is NULL!");
             return;
         }
 
-        
-        string senderName = "Unknown";
+        string text = chatInputField.text;
 
-        if (!string.IsNullOrEmpty(PhotonNetwork.NickName))
+        if (string.IsNullOrEmpty(text))
+            return;
+
+        string senderName = string.IsNullOrEmpty(PhotonNetwork.NickName)
+            ? "Unknown"
+            : PhotonNetwork.NickName;
+
+        int avatarIndex = 0;
+
+        if (AvatarManager.Instance != null)
         {
-            senderName = PhotonNetwork.NickName;
+            avatarIndex = AvatarManager.Instance.GetAvatarIndex();
+        }
+        else
+        {
+            Debug.LogWarning("AvatarManager not found!");
         }
 
-        string fullMessage = senderName + ": " + text;
+        object[] data = new object[] { senderName, text, avatarIndex };
 
-        
         chatInputField.text = "";
 
-        // Send to everyone in the room
-        RaiseEventOptions options = new RaiseEventOptions();
-        options.Receivers = ReceiverGroup.All;
+        RaiseEventOptions options = new RaiseEventOptions
+        {
+            Receivers = ReceiverGroup.All
+        };
 
-        SendOptions sendOptions = new SendOptions();
-        sendOptions.Reliability = true;
+        SendOptions sendOptions = new SendOptions
+        {
+            Reliability = true
+        };
 
-        PhotonNetwork.RaiseEvent(ChatEventCode, fullMessage, options, sendOptions);
+        PhotonNetwork.RaiseEvent(ChatEventCode, data, options, sendOptions);
     }
 
     public void OnEvent(EventData photonEvent)
     {
         if (photonEvent.Code == ChatEventCode)
         {
-            object data = photonEvent.CustomData;
-            string messageText = data as string;
+            object[] receivedData = (object[])photonEvent.CustomData;
 
-            if (messageText != null)
-            {
-                AddMessageToUI(messageText);
-            }
+            string senderName = (string)receivedData[0];
+            string messageText = (string)receivedData[1];
+            int avatarIndex = (int)receivedData[2];
+
+            AddMessageToUI(senderName, messageText, avatarIndex);
         }
     }
 
-    void AddMessageToUI(string messageText)
+    void AddMessageToUI(string senderName, string messageText, int avatarIndex)
     {
         GameObject item = Instantiate(messageItemPrefab, messagesContainer);
 
+        // Set text
         TMP_Text textComponent = item.GetComponentInChildren<TMP_Text>();
         if (textComponent != null)
         {
-            textComponent.text = messageText;
+            textComponent.text = senderName + ": " + messageText;
+        }
+
+        // Set avatar image
+        Transform avatarTransform = item.transform.Find("AvatarImage");
+
+        if (avatarTransform != null)
+        {
+            Image avatarImg = avatarTransform.GetComponent<Image>();
+            avatarImg.sprite = AvatarDatabase.Instance.GetAvatar(avatarIndex);
         }
     }
 

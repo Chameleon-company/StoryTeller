@@ -33,8 +33,11 @@ public class PhotonConnect : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log("Joinning Room and Loading the scene now"); 
-        SceneManager.LoadScene("LobbyScene");
+        Debug.Log("Joinning Room"); 
+        if (PhotonNetwork.LocalPlayer.CustomProperties.ContainsKey("avatarIndex"))
+        {
+            SceneManager.LoadScene("LobbyScene");
+        }
     }
 
     public override void OnDisconnected(Photon.Realtime.DisconnectCause cause)

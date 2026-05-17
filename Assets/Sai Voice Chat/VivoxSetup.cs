@@ -16,6 +16,9 @@ public class VivoxSetup : MonoBehaviour
     [Header("Mute Button UI")]
     public Button muteButton;
     public TMP_Text muteButtonText;
+    public Image muteButtonImage;
+    public Sprite micOnIcon;
+    public Sprite micMutedIcon;
 
     private bool isMicMuted = false;
     private bool isVivoxReady = false;
@@ -169,13 +172,25 @@ public class VivoxSetup : MonoBehaviour
 
     private void UpdateMuteButtonText()
     {
-        if (muteButtonText == null)
+        if (muteButtonText != null)
         {
-            Debug.LogWarning("Mute Button Text is not assigned in the Inspector.");
-            return;
+            muteButtonText.text = isMicMuted ? "Unmute" : "Mute";
         }
 
-        muteButtonText.text = isMicMuted ? "Unmute" : "Mute";
+        if (muteButtonImage != null)
+        {
+            Sprite targetIcon = isMicMuted ? micMutedIcon : micOnIcon;
+
+            if (targetIcon != null)
+            {
+                muteButtonImage.sprite = targetIcon;
+            }
+        }
+
+        if (muteButtonText == null && muteButtonImage == null)
+        {
+            Debug.LogWarning("Mute Button Text/Image is not assigned in the Inspector.");
+        }
     }
 
     public async Task LeaveVoiceChannel()

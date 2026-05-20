@@ -1,0 +1,1 @@
+Implemented interactive waterhole hover descriptions for The Storyteller Unity board game. This included invisible waterhole hover zones, tooltip popups, child-friendly waterhole names and descriptions, improved tooltip styling, and cursor hiding behaviour during hover interaction.

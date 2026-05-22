@@ -1,7 +1,7 @@
 using System;
-using UnityEditor.PackageManager.Requests;
+
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class movementScript : MonoBehaviour
 {
@@ -22,41 +22,41 @@ public class movementScript : MonoBehaviour
         pos = transform.position;
 
         //mouse drag movement controls
-        if (mouseEnabled == true)
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                mouseMovement = true;
-                mouseOrigin = Input.mousePosition;
-            }
-            if (!Input.GetMouseButton(1))
-            {
-                mouseMovement = false;
-                pos = transform.position;
-            }
-            if (mouseMovement)
-            {
-                Vector3 delta = Input.mousePosition - mouseOrigin;
-                mouseOrigin = Input.mousePosition;
-                mouseX = delta.x;
-                mouseY = delta.y;
-            }
+        // if (mouseEnabled == true)
+        // {
+        //     if (Input.GetMouseButtonDown(1))
+        //     {
+        //         mouseMovement = true;
+        //         mouseOrigin = Input.mousePosition;
+        //     }
+        //     if (!Input.GetMouseButton(1))
+        //     {
+        //         mouseMovement = false;
+        //         pos = transform.position;
+        //     }
+        //     if (mouseMovement)
+        //     {
+        //         Vector3 delta = Input.mousePosition - mouseOrigin;
+        //         mouseOrigin = Input.mousePosition;
+        //         mouseX = delta.x;
+        //         mouseY = delta.y;
+        //     }
 
-        }
+        // }
         //wasd, UI, and mouse button movement controls
-        if (Input.GetKey(KeyCode.W) || moveUp || mouseY > 0)
+        if (moveUp)
         {
             pos.z += panSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.S) || moveDown || mouseY < 0)
+        if (moveDown)
         {
             pos.z -= panSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.A) || moveLeft || mouseX < 0)
+        if (moveLeft)
         {
             pos.x -= panSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.D) || moveRight || mouseX > 0)
+        if (moveRight)
         {
             pos.x += panSpeed * Time.deltaTime;
         }
@@ -64,7 +64,11 @@ public class movementScript : MonoBehaviour
 
 
         //scrollwheel and UI zoom controls
-        float zoom = Input.GetAxis("Mouse ScrollWheel");
+       // float zoom = Input.GetAxis("Mouse ScrollWheel");
+
+       float zoom = 0f; 
+    
+
         if (zoomIn)
         {
             zoom = .01f;

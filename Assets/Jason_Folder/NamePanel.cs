@@ -10,23 +10,25 @@ public class NamePanel : MonoBehaviour
 
     public void OnConfirmName()
     {
-        string playerName = nameInput.text; 
+        string playerName = nameInput.text;
 
         if (string.IsNullOrEmpty(playerName))
         {
-            return; 
+            return;
+        }
 
-        } 
-
-        
         PhotonNetwork.NickName = playerName;
-        PlayerData.SetPlayerName(playerName); 
 
-        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable(); 
-        hash["playerName"] = playerName; 
+        PlayerPrefs.SetString("PlayerName", playerName);
+        PlayerPrefs.Save();
+
+        PlayerData.SetPlayerName(playerName);
+
+        ExitGames.Client.Photon.Hashtable hash = new ExitGames.Client.Photon.Hashtable();
+        hash["playerName"] = playerName;
         Photon.Pun.PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
 
-        gameObject.SetActive(false); 
+        gameObject.SetActive(false);
         avatarPanel.SetActive(true);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created

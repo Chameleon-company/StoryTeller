@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
@@ -9,31 +9,20 @@ public class ChatManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public Transform messagesContainer;
     public GameObject messageItemPrefab;
+
     public TMP_InputField chatInputField;
     public Button sendButton;
 
-    
     private const byte ChatEventCode = 1;
 
-    void Start()
+    private void Start()
     {
-        sendButton.onClick.AddListener(OnSendButtonClicked);
+        sendButton.onClick.AddListener(SendChatMessage);
     }
 
-    void OnDestroy()
+    private void Update()
     {
-        sendButton.onClick.RemoveListener(OnSendButtonClicked);
-    }
-
-    void OnSendButtonClicked()
-    {
-        SendChatMessage();
-    }
-
-    void Update()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return) && chatInputField.isFocused)
         {
             SendChatMessage();
         }
@@ -41,70 +30,76 @@ public class ChatManager : MonoBehaviourPunCallbacks, IOnEventCallback
 
     void SendChatMessage()
     {
-        string text = chatInputField.text;
+        string text = chatInputField.text.Trim();
 
         if (string.IsNullOrEmpty(text))
-        {
             return;
-        }
 
-        
-        string senderName = "Unknown";
-
-        if (!string.IsNullOrEmpty(PhotonNetwork.NickName))
+        object[] data = new object[]
         {
-            senderName = PhotonNetwork.NickName;
-        }
+            PhotonNetwork.LocalPlayer.ActorNumber,
+            PhotonNetwork.NickName,
+            text
+        };
 
-        string fullMessage = senderName + ": " + text;
+        PhotonNetwork.RaiseEvent(
+            ChatEventCode,
+            data,
+            new RaiseEventOptions { Receivers = ReceiverGroup.All },
+            new SendOptions { Reliability = true }
+        );
 
-        
         chatInputField.text = "";
-
-        // Send to everyone in the room
-        RaiseEventOptions options = new RaiseEventOptions();
-        options.Receivers = ReceiverGroup.All;
-
-        SendOptions sendOptions = new SendOptions();
-        sendOptions.Reliability = true;
-
-        PhotonNetwork.RaiseEvent(ChatEventCode, fullMessage, options, sendOptions);
     }
 
     public void OnEvent(EventData photonEvent)
     {
-        if (photonEvent.Code == ChatEventCode)
-        {
-            object data = photonEvent.CustomData;
-            string messageText = data as string;
+        if (photonEvent.Code != ChatEventCode)
+            return;
 
-            if (messageText != null)
+        object[] data = (object[])photonEvent.CustomData;
+
+        int actorNumber = (int)data[0];
+        string senderName = (string)data[1];
+        string messageText = (string)data[2];
+
+        Player sender = PhotonNetwork.CurrentRoom.GetPlayer(actorNumber);
+
+        int avatarIndex = 0;
+
+        if (sender != null)
+        {
+            if (sender.CustomProperties.TryGetValue("AvatarIndex", out object value))
             {
-                AddMessageToUI(messageText);
+                avatarIndex = (int)value;
             }
         }
+
+        Debug.Log($"MESSAGE FROM {senderName} | Actor={actorNumber} | Avatar={avatarIndex}");
+
+        AddMessageToUI(senderName, messageText, avatarIndex);
     }
 
-    void AddMessageToUI(string messageText)
+    void AddMessageToUI(string senderName, string messageText, int avatarIndex)
     {
         GameObject item = Instantiate(messageItemPrefab, messagesContainer);
 
-        TMP_Text textComponent = item.GetComponentInChildren<TMP_Text>();
-        if (textComponent != null)
+        TMP_Text txt = item.GetComponentInChildren<TMP_Text>();
+
+        if (txt != null)
         {
-            textComponent.text = messageText;
+            txt.text = $"<color=#ffac57>[{senderName}]</color> :- {messageText}";
         }
-    }
 
-    public override void OnEnable()
-    {
-        base.OnEnable();
-        PhotonNetwork.AddCallbackTarget(this);
-    }
+        Image avatarImage = item.transform.Find("AvatarImage").GetComponent<Image>();
 
-    public override void OnDisable()
-    {
-        base.OnDisable();
-        PhotonNetwork.RemoveCallbackTarget(this);
+        if (avatarImage != null)
+        {
+            Sprite avatarSprite = AvatarDatabase.Instance.GetAvatar(avatarIndex);
+
+            avatarImage.sprite = avatarSprite;
+
+            Debug.Log($"SET AVATAR -> {senderName} -> {avatarIndex}");
+        }
     }
 }

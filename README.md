@@ -30,11 +30,4 @@ You can try the current version of the board game online here:
 - To gain real-world experience in Unity development, game design, and team collaboration as part of our capstone project.
 
 
-## Project Stakeholders
-
-- **Product Owner**: Glenn Shea    
-- **Supervisors**: Dr. Sophie McKenzie & Dr. Michael Hobbs (Deakin University)
-
-
-> This project is part of a university capstone unit, developed by a student team in collaboration with Glenn Shea and Deakin University.
 
